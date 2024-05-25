@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="./tailwind.output.css" />
+        <script src="./index.js" defer></script>
+    </head>
+    <body class="flex flex-col gap-6 bg-neutral-950">
+        <div class="flex flex-col items-center gap-4 text-white">
+            <h1 class="text-3xl text-indigo-100 font-bold">Dog Gallery</h1>
+            <div class="flex flex-col items-center gap-4">
+                <input type="number" id="dog-quantity" min="1" max="100" placeholder="Number of dogs" class="w-64 rounded-lg p-1 text-neutral-950" />
+                <div class="flex gap-4">
+                    <button
+                        id="fetch-button"
+                        class="rounded-xl bg-indigo-600 px-4 py-1 text-white disabled:opacity-60 transition-transform hover:enabled:scale-105 active:enabled:scale-95"
+                    >
+                        Search
+                    </button>
+                    <button
+                        id="clear-button"
+                        class="rounded-xl bg-indigo-600 px-4 py-1 text-white disabled:opacity-60 transition-transform hover:enabled:scale-105 active:enabled:scale-95"
+                    >
+                        Clear Gallery
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="gallery" class="flex w-screen flex-wrap justify-center gap-4"></div>
+        <div class="flex items-center justify-center">
+            <button
+                id="prev-button"
+                class="rounded-l-xl rounded-r-none bg-indigo-600 px-4 py-1 text-white disabled:opacity-60 transition-transform hover:enabled:hover:scale-105 active:enabled:active:scale-95"
+                disabled
+            >
+                &lt;
+            </button>
+            <p id="current-page" class="text-indigo-950 bg-white py-1 w-16 text-center">1 - 1</p>
+            <button
+                id="next-button"
+                class="rounded-l-none rounded-r-xl bg-indigo-600 px-4 py-1 text-white disabled:opacity-60 transition-transform hover:enabled:hover:scale-105 active:enabled:active:scale-95"
+            >
+                &gt;
+            </button>
+        </div>
+        <div class="fixed hidden h-screen w-screen items-center justify-center bg-modal" id="modal-container">
+            <img src="" alt="" id="modal-img" class="h-96 w-96 rounded-lg hidden" />
+            <div id="modal-message" class="bg-white h-40 w-64 flex-col p-8 rounded-lg hidden">
+                <p class="font-medium text-center">A quantidade de fotos permitida é de 1 a 100.</p>
+                <button
+                    class="bg-indigo-600 text-white w-2/5 m-auto rounded-lg p-2 transition-transform hover:scale-105 active:scale-95"
+                    id="button-modal"
+                >
+                    Okay
+                </button>
+            </div>
+        </div>
+    </body>
+</html>

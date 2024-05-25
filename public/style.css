@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#gallery img:not(.loading),
+.skeleton {
+    width: 15rem;
+    height: 12rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#galery img:not(.loading){
+    cursor: pointer;
+}
+
+.loading{
+    width: 5rem;
+    height: 5rem;
+}
